@@ -241,13 +241,14 @@
                             <div class="billing-card quick-pick-card">
                                 <div class="quick-pick-header">
                                     <h3>Quick Pick (Today's Prices)</h3>
-                                    <input type="text" id="quick-pick-search" placeholder="Search vegetables & bananas...">
+                                    <input type="text" id="quick-pick-search" placeholder="Search vegetables, bananas & leaves...">
                                 </div>
                                 
                                 <div class="quick-pick-tabs">
                                     <button class="quick-tab active" data-category="all">All</button>
                                     <button class="quick-tab" data-category="vegetables">Vegetables (காய்கறிகள்)</button>
                                     <button class="quick-tab" data-category="bananas">Bananas (வாழைப்பழம்)</button>
+                                    <button class="quick-tab" data-category="leaves">Leaves (கீரை வகைகள்)</button>
                                 </div>
                                 
                                 <div class="quick-pick-grid-wrapper">
@@ -265,7 +266,7 @@
                 <section id="view-prices" class="app-view">
                     <div class="prices-header-container">
                         <div>
-                            <h1 class="view-title">Today's Vegetable & Banana Prices</h1>
+                            <h1 class="view-title">Today's Vegetable, Banana & Leaf Prices</h1>
                             <p class="view-subtitle">Configure standard rates per unit. These prices populate when items are quick-selected.</p>
                         </div>
                         <button id="save-all-prices-btn" class="save-prices-btn-header">Save Prices</button>
@@ -285,6 +286,14 @@
                         <div class="price-category-card">
                             <h2 class="category-title">BANANAS (வாழைப்பழங்கள்)</h2>
                             <div id="bananas-price-grid" class="price-settings-grid">
+                                <!-- Populated dynamically by Javascript -->
+                            </div>
+                        </div>
+                        
+                        <!-- LEAVES SECTION -->
+                        <div class="price-category-card">
+                            <h2 class="category-title">LEAVES (கீரை வகைகள்)</h2>
+                            <div id="leaves-price-grid" class="price-settings-grid">
                                 <!-- Populated dynamically by Javascript -->
                             </div>
                         </div>

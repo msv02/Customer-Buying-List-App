@@ -18,14 +18,50 @@ const DEFAULT_PRODUCTS = {
         { id: 'beans', tamil: 'பீன்ஸ்', english: 'Beans', price: 40, unit: 'kg' },
         { id: 'cabbage', tamil: 'முட்டைக்கோஸ்', english: 'Cabbage', price: null, unit: 'kg' },
         { id: 'cauliflower', tamil: 'காலிபிளவர்', english: 'Cauliflower', price: null, unit: 'kg' },
-        { id: 'beetroot', tamil: 'பீட்ரூட்', english: 'Beetroot', price: 40, unit: 'kg' }
+        { id: 'beetroot', tamil: 'பீட்ரூட்', english: 'Beetroot', price: 40, unit: 'kg' },
+        { id: 'bitter_gourd', tamil: 'பாகற்காய்', english: 'Bitter Gourd', price: 40, unit: 'kg' },
+        { id: 'bottle_gourd', tamil: 'சுரைக்காய்', english: 'Bottle Gourd', price: 30, unit: 'kg' },
+        { id: 'ridge_gourd', tamil: 'பீர்க்கங்காய்', english: 'Ridge Gourd', price: 45, unit: 'kg' },
+        { id: 'snake_gourd', tamil: 'புடலங்காய்', english: 'Snake Gourd', price: 35, unit: 'kg' },
+        { id: 'radish', tamil: 'முள்ளங்கி', english: 'Radish', price: 30, unit: 'kg' },
+        { id: 'broad_beans', tamil: 'அவரைக்காய்', english: 'Broad Beans', price: 50, unit: 'kg' },
+        { id: 'cluster_beans', tamil: 'கொத்தவரங்காய்', english: 'Cluster Beans', price: 40, unit: 'kg' },
+        { id: 'colocasia', tamil: 'சேப்பங்கிழங்கு', english: 'Colocasia', price: 50, unit: 'kg' },
+        { id: 'yam', tamil: 'சேனைக்கிழங்கு', english: 'Yam', price: 60, unit: 'kg' },
+        { id: 'sweet_potato', tamil: 'சர்க்கரைவள்ளி கிழங்கு', english: 'Sweet Potato', price: 40, unit: 'kg' },
+        { id: 'ivy_gourd', tamil: 'கோவைக்காய்', english: 'Ivy Gourd', price: 40, unit: 'kg' },
+        { id: 'chayote', tamil: 'சௌ சௌ', english: 'Chayote', price: 35, unit: 'kg' },
+        { id: 'ash_gourd', tamil: 'சாம்பல் பரங்கிக்காய்', english: 'Ash Gourd', price: 30, unit: 'kg' },
+        { id: 'pumpkin', tamil: 'பரங்கிக்காய்', english: 'Pumpkin', price: 25, unit: 'kg' },
+        { id: 'ginger', tamil: 'இஞ்சி', english: 'Ginger', price: 120, unit: 'kg' },
+        { id: 'garlic', tamil: 'பூண்டு', english: 'Garlic', price: 150, unit: 'kg' },
+        { id: 'lemon', tamil: 'எலுமிச்சை', english: 'Lemon', price: 5, unit: 'kg' },
+        { id: 'green_peas', tamil: 'பச்சை பட்டாணி', english: 'Green Peas', price: 80, unit: 'kg' },
+        { id: 'capsicum', tamil: 'குடை மிளகாய்', english: 'Capsicum', price: 60, unit: 'kg' },
+        { id: 'mushroom', tamil: 'காளான்', english: 'Mushroom', price: 45, unit: 'kg' },
+        { id: 'sweet_corn', tamil: 'சோளம்', english: 'Sweet Corn', price: 20, unit: 'kg' },
+        { id: 'sambar_cucumber', tamil: 'சம்பார் வெள்ளரி', english: 'Sambar Cucumber', price: 30, unit: 'kg' }
     ],
     bananas: [
-        { id: 'red_banana', tamil: 'செவ்வாழை', english: 'Red Banana', price: 100, unit: 'kg' },
+        { id: 'yadan', tamil: 'ஏடன்', english: 'Yadan', price: 70, unit: 'kg' },
+        { id: 'kozhikode', tamil: 'கோழிக்கோடு', english: 'Kozhikode', price: 60, unit: 'kg' },
+        { id: 'kadhali', tamil: 'கதலி', english: 'Kadhali', price: 80, unit: 'kg' },
+        { id: 'nalipoovan', tamil: 'நலிபூவன்', english: 'Nalipoovan', price: 70, unit: 'kg' },
+        { id: 'vayal_valli', tamil: 'வயல்வள்ளி', english: 'Vayal Valli', price: 50, unit: 'kg' },
+        { id: 'vellai_singam', tamil: 'வெள்ளை சிங்கம்', english: 'Vellai Singam', price: 80, unit: 'kg' },
+        { id: 'chavalai', tamil: 'செவ்வாழை', english: 'Chavalai', price: 100, unit: 'kg' },
+        { id: 'pachi_palam', tamil: 'பச்சை பழம்', english: 'Pachi Palam', price: 40, unit: 'kg' },
         { id: 'karpooravalli', tamil: 'கற்பூரவள்ளி', english: 'Karpooravalli', price: 60, unit: 'kg' },
-        { id: 'rasthali', tamil: 'ரஸ்தாளி', english: 'Rasthali', price: 80, unit: 'kg' },
-        { id: 'poovan', tamil: 'பூவன்', english: 'Poovan', price: 50, unit: 'kg' },
-        { id: 'yelakki', tamil: 'ஏலக்கி', english: 'Yelakki', price: 90, unit: 'kg' }
+        { id: 'will_valai', tamil: 'வில் வாழை', english: 'Will Valai', price: 50, unit: 'kg' },
+        { id: 'raw_banana', tamil: 'வாழைக்காய்', english: 'Raw Banana', price: 10, unit: 'kg' },
+        { id: 'plantain_flower', tamil: 'வாழைப்பூ', english: 'Plantain Flower', price: 20, unit: 'kg' },
+        { id: 'plantain_stem', tamil: 'வாழைத்தண்டு', english: 'Plantain Stem', price: 20, unit: 'kg' }
+    ],
+    leaves: [
+        { id: 'coriander_leaves', tamil: 'கொத்தமல்லி', english: 'Coriander Leaves', price: 15, unit: 'kg' },
+        { id: 'mint_leaves', tamil: 'புதினா', english: 'Mint Leaves', price: 10, unit: 'kg' },
+        { id: 'curry_leaves', tamil: 'கறிவேப்பிலை', english: 'Curry Leaves', price: 10, unit: 'kg' },
+        { id: 'banana_leaf', tamil: 'வாழை இலை', english: 'Banana Leaf', price: 5, unit: 'Pudu' }
     ]
 };
 
@@ -54,6 +90,32 @@ const db = firebase.firestore();
 
 let isFirebaseInitialized = false;
 
+function ensureAllPricesInitialized() {
+    let updated = false;
+    if (!state.prices) {
+        state.prices = {};
+    }
+    DEFAULT_PRODUCTS.vegetables.forEach(p => {
+        if (state.prices[p.id] === undefined) {
+            state.prices[p.id] = p.price;
+            updated = true;
+        }
+    });
+    DEFAULT_PRODUCTS.bananas.forEach(p => {
+        if (state.prices[p.id] === undefined) {
+            state.prices[p.id] = p.price;
+            updated = true;
+        }
+    });
+    DEFAULT_PRODUCTS.leaves.forEach(p => {
+        if (state.prices[p.id] === undefined) {
+            state.prices[p.id] = p.price;
+            updated = true;
+        }
+    });
+    return updated;
+}
+
 function setupFirebaseSync() {
     db.collection('income_track').doc('database_state').onSnapshot((doc) => {
         if (doc.exists) {
@@ -62,10 +124,16 @@ function setupFirebaseSync() {
             state.purchases = data.purchases || [];
             state.prices = data.prices || initializeDefaultPrices();
             
+            const pricesUpdated = ensureAllPricesInitialized();
+            
             // Sync locally to cache
             localStorage.setItem('it_customers', JSON.stringify(state.customers));
             localStorage.setItem('it_purchases', JSON.stringify(state.purchases));
             localStorage.setItem('it_prices', JSON.stringify(state.prices));
+            
+            if (pricesUpdated) {
+                saveStateToFirebase();
+            }
             
             // Re-render current active view
             refreshActiveView();
@@ -113,6 +181,11 @@ function loadStateFromStorage() {
         state.customers = JSON.parse(localCustomers);
         state.purchases = JSON.parse(localPurchases);
         state.prices = localPrices ? JSON.parse(localPrices) : initializeDefaultPrices();
+        
+        const pricesUpdated = ensureAllPricesInitialized();
+        if (pricesUpdated) {
+            saveStateToStorage();
+        }
     } else {
         // Initialize with default prices and seed sample data matching the exact screenshot details!
         state.prices = initializeDefaultPrices();
@@ -133,6 +206,7 @@ function initializeDefaultPrices() {
     const prices = {};
     DEFAULT_PRODUCTS.vegetables.forEach(p => { prices[p.id] = p.price; });
     DEFAULT_PRODUCTS.bananas.forEach(p => { prices[p.id] = p.price; });
+    DEFAULT_PRODUCTS.leaves.forEach(p => { prices[p.id] = p.price; });
     return prices;
 }
 
@@ -460,6 +534,9 @@ function renderQuickPickGrid() {
     if (activeQuickCategory === 'all' || activeQuickCategory === 'bananas') {
         itemsToRender = [...itemsToRender, ...DEFAULT_PRODUCTS.bananas];
     }
+    if (activeQuickCategory === 'all' || activeQuickCategory === 'leaves') {
+        itemsToRender = [...itemsToRender, ...DEFAULT_PRODUCTS.leaves];
+    }
     
     // Filter by search query
     if (quickSearchQuery.trim()) {
@@ -735,9 +812,11 @@ function renderPricesConfiguration() {
     
     const vegGrid = document.getElementById('vegetables-price-grid');
     const bananaGrid = document.getElementById('bananas-price-grid');
+    const leafGrid = document.getElementById('leaves-price-grid');
     
     vegGrid.innerHTML = '';
     bananaGrid.innerHTML = '';
+    leafGrid.innerHTML = '';
     
     // Load vegetables
     DEFAULT_PRODUCTS.vegetables.forEach(v => {
@@ -751,6 +830,13 @@ function renderPricesConfiguration() {
         const price = state.prices[b.id] !== undefined ? state.prices[b.id] : b.price;
         const row = createPriceSettingRow(b, price);
         bananaGrid.appendChild(row);
+    });
+    
+    // Load leaves
+    DEFAULT_PRODUCTS.leaves.forEach(l => {
+        const price = state.prices[l.id] !== undefined ? state.prices[l.id] : l.price;
+        const row = createPriceSettingRow(l, price);
+        leafGrid.appendChild(row);
     });
 }
 
@@ -780,7 +866,7 @@ function saveAllPrices() {
     });
     
     saveStateToStorage();
-    alert("Vegetable & banana prices saved for today!");
+    alert("Vegetable, banana & leaf prices saved for today!");
     switchView('dashboard');
 }
 
