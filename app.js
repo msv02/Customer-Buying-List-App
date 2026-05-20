@@ -1,5 +1,5 @@
 /* ==========================================================================
-   INCOME TRACK - MAIN APPLICATION ENGINE
+   S.S.M TRACK SOFTWARE - MAIN APPLICATION ENGINE
    ========================================================================== */
 
 // --- Default Data Configuration ---
