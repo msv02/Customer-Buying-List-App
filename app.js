@@ -40,7 +40,10 @@ const DEFAULT_PRODUCTS = {
         { id: 'capsicum', tamil: 'குடை மிளகாய்', english: 'Capsicum', price: 60, unit: 'kg' },
         { id: 'mushroom', tamil: 'காளான்', english: 'Mushroom', price: 45, unit: 'kg' },
         { id: 'sweet_corn', tamil: 'சோளம்', english: 'Sweet Corn', price: 20, unit: 'kg' },
-        { id: 'sambar_cucumber', tamil: 'சம்பார் வெள்ளரி', english: 'Sambar Cucumber', price: 30, unit: 'kg' }
+        { id: 'sambar_cucumber', tamil: 'சம்பார் வெள்ளரி', english: 'Sambar Cucumber', price: 30, unit: 'kg' },
+        { id: 'cucumber', tamil: 'வெள்ளரிக்காய்', english: 'Cucumber', price: 40, unit: 'kg' },
+        { id: 'bajji_chilli', tamil: 'பஜ்ஜி மிளகாய்', english: 'Bajji Chilli', price: 60, unit: 'kg' },
+        { id: 'champu', tamil: 'சேம்பு', english: 'Champu', price: 50, unit: 'kg' }
     ],
     bananas: [
         { id: 'yadan', tamil: 'ஏடன்', english: 'Yadan', price: 70, unit: 'kg' },
@@ -1036,16 +1039,6 @@ function renderCustomerProfileDetails() {
                 </table>
                 
                 <div class="h-details-actions">
-                    <button class="btn-secondary share-invoice-btn" data-id="${p.id}">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="18" cy="5" r="3"></circle>
-                            <circle cx="6" cy="12" r="3"></circle>
-                            <circle cx="18" cy="19" r="3"></circle>
-                            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-                            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-                        </svg>
-                        Share WhatsApp
-                    </button>
                     <button class="btn-secondary print-invoice-btn" data-id="${p.id}">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="6 9 6 2 18 2 18 9"></polyline>
@@ -1095,13 +1088,6 @@ function renderCustomerProfileDetails() {
     });
     
     // Action details listeners
-    document.querySelectorAll('.share-invoice-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            const id = e.currentTarget.getAttribute('data-id');
-            shareViaWhatsApp(id);
-        });
-    });
-
     document.querySelectorAll('.print-invoice-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             const id = e.currentTarget.getAttribute('data-id');
@@ -1235,52 +1221,170 @@ function closeInvoiceModal() {
     activeModalInvoiceId = null;
 }
 
-// Compile beautifully formatted text and open WhatsApp share window
-function shareViaWhatsApp(purchaseId) {
-    const p = state.purchases.find(item => item.id === purchaseId);
-    if (!p) return;
+// High-performance thermal invoice printing system utilizing lightweight hidden frame
+function triggerFastPrint() {
+    const printContent = document.getElementById('invoice-print-area').innerHTML;
     
-    const customer = state.customers.find(c => c.id === p.customerId);
-    if (!customer) return;
+    // Create temporary sandboxed frame for instant compilation
+    const iframe = document.createElement('iframe');
+    iframe.style.position = 'fixed';
+    iframe.style.right = '0';
+    iframe.style.bottom = '0';
+    iframe.style.width = '0';
+    iframe.style.height = '0';
+    iframe.style.border = '0';
+    document.body.appendChild(iframe);
     
-    let text = `*Thirumalaimurugan Shop*\n`;
-    text += `Ph: 4633238478\n`;
-    text += `Address: Main Road, Panboli - 627807\n`;
-    text += `=========================\n`;
-    text += `*Invoice No:* ${p.id.replace('pur_', '#')}\n`;
-    text += `*Date:* ${p.dateTime}\n`;
-    text += `*Customer:* ${customer.name}\n`;
-    text += `=========================\n\n`;
-    
-    p.items.forEach((item, idx) => {
-        text += `${idx + 1}. *${item.name}*\n`;
-        text += `    ${item.qty} ${item.unit} x ₹${item.price.toFixed(2)} = *₹${item.total.toFixed(2)}*\n`;
-    });
-    
-    text += `\n-------------------------\n`;
-    if (p.discount > 0) {
-        text += `*Subtotal:* ₹${(p.total + p.discount).toFixed(2)}\n`;
-        text += `*Discount:* -₹${p.discount.toFixed(2)}\n`;
-    }
-    text += `*Grand Total:* *₹${p.total.toFixed(2)}*\n`;
-    text += `*Payment Status:* *${p.status.toUpperCase()}*\n`;
-    text += `-------------------------\n\n`;
-    text += `_Thank you for buying from us! Visit again!_`;
-    
-    const encodedText = encodeURIComponent(text);
-    const phoneNumber = customer.phone ? customer.phone.replace(/[^0-9]/g, '') : '';
-    
-    // Add country code if missing
-    let targetPhoneUrl = '';
-    if (phoneNumber) {
-        const fullPhone = phoneNumber.length === 10 ? '91' + phoneNumber : phoneNumber;
-        targetPhoneUrl = `https://wa.me/${fullPhone}?text=${encodedText}`;
-    } else {
-        targetPhoneUrl = `https://wa.me/?text=${encodedText}`;
-    }
-    
-    window.open(targetPhoneUrl, '_blank');
+    const doc = iframe.contentWindow.document;
+    doc.open();
+    doc.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Print Invoice</title>
+            <style>
+                body {
+                    background: #ffffff !important;
+                    color: #000000 !important;
+                    font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+                    padding: 0;
+                    margin: 0;
+                }
+                .invoice-container {
+                    width: 58mm;
+                    padding: 10px;
+                    margin: 0 auto;
+                    box-sizing: border-box;
+                }
+                .invoice-shop-header {
+                    text-align: center;
+                    border-bottom: 1.5px solid #000000;
+                    padding-bottom: 8px;
+                    margin-bottom: 12px;
+                }
+                .shop-name {
+                    font-size: 15px;
+                    font-weight: 800;
+                    margin: 0;
+                    color: #000000;
+                }
+                .shop-contact {
+                    font-size: 9px;
+                    color: #000000;
+                    margin: 4px 0 0 0;
+                }
+                .invoice-meta-info {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 3px;
+                    margin-bottom: 12px;
+                    font-size: 10px;
+                    border-bottom: 1px dashed #000000;
+                    padding-bottom: 8px;
+                }
+                .invoice-meta-info p {
+                    margin: 0;
+                    color: #000000;
+                }
+                .invoice-meta-info p strong {
+                    color: #000000;
+                }
+                .invoice-items-table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin-bottom: 12px;
+                    font-size: 9.5px;
+                }
+                .invoice-items-table th {
+                    padding: 6px 2px;
+                    border-bottom: 1px solid #000000;
+                    border-top: 1px solid #000000;
+                    color: #000000;
+                    font-weight: 700;
+                    text-align: left;
+                }
+                .invoice-items-table td {
+                    padding: 8px 2px;
+                    border-bottom: 1px solid #e2e8f0;
+                    color: #000000;
+                }
+                .invoice-items-table tr:last-child td {
+                    border-bottom: none;
+                }
+                .invoice-calculations {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    gap: 4px;
+                    border-top: 1.5px solid #000000;
+                    padding-top: 8px;
+                    margin-bottom: 16px;
+                    font-size: 10px;
+                }
+                .calc-row {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    color: #000000;
+                }
+                .calc-row.grand-total {
+                    border-top: 1px dashed #000000;
+                    padding-top: 6px;
+                    font-size: 14px;
+                    font-weight: 800;
+                    color: #000000;
+                }
+                .inv-status-badge {
+                    display: inline-block;
+                    padding: 2px 6px;
+                    border-radius: 3px;
+                    font-size: 10px;
+                    font-weight: 800;
+                }
+                .inv-status-badge.paid {
+                    background-color: #d1fae5;
+                    color: #065f46;
+                }
+                .inv-status-badge.unpaid {
+                    background-color: #fee2e2;
+                    color: #991b1b;
+                }
+                .invoice-footer-message {
+                    text-align: center;
+                    border-top: 1px solid #e2e8f0;
+                    padding-top: 16px;
+                    font-size: 11px;
+                    color: #000000;
+                    font-style: italic;
+                    margin: 0;
+                }
+                @media print {
+                    @page {
+                        size: 58mm auto;
+                        margin: 0;
+                    }
+                }
+            </style>
+        </head>
+        <body>
+            <div class="invoice-container">
+                \${printContent}
+            </div>
+            <script>
+                window.onload = function() {
+                    window.focus();
+                    window.print();
+                    setTimeout(function() {
+                        window.parent.document.body.removeChild(window.frameElement);
+                    }, 500);
+                };
+            <\/script>
+        </body>
+        </html>
+    `);
+    doc.close();
 }
+
 
 
 
@@ -1377,13 +1481,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('close-invoice-modal-btn').addEventListener('click', closeInvoiceModal);
     
     document.getElementById('print-invoice-btn').addEventListener('click', () => {
-        window.print();
-    });
-    
-    document.getElementById('whatsapp-share-btn').addEventListener('click', () => {
-        if (activeModalInvoiceId) {
-            shareViaWhatsApp(activeModalInvoiceId);
-        }
+        triggerFastPrint();
     });
     
     // Close modal on click outside content card
