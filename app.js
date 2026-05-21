@@ -1,5 +1,5 @@
 /* ==========================================================================
-   S.S.M TRACK SOFTWARE - MAIN APPLICATION ENGINE
+   S.S.M BUYERS TRACK - MAIN APPLICATION ENGINE
    ========================================================================== */
 
 // --- Default Data Configuration ---
