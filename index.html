@@ -1,97 +1,473 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sakthi Affiliates</title>
-  <meta name="description" content="Sakthi Affiliates – Premium curated affiliate deals." />
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="https://res.cloudinary.com/dbqd8ehhf/image/upload/q_auto/f_auto/v1781189222/ChatGPT_Image_Jun_11_2026_at_08_16_00_PM_k2scar.png" />
-  <link rel="apple-touch-icon" href="https://res.cloudinary.com/dbqd8ehhf/image/upload/q_auto/f_auto/v1781189222/ChatGPT_Image_Jun_11_2026_at_08_16_00_PM_k2scar.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.S.M Buyers Track - Customer Buying List App</title>
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/dbqd8ehhf/image/upload/q_auto/f_auto/v1779386177/ChatGPT_Image_May_21_2026_at_11_25_48_PM_noj0jk.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="dark-mode">
+    <div class="app-container">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <!-- Application Logo -->
+                    <img src="https://res.cloudinary.com/dbqd8ehhf/image/upload/q_auto/f_auto/v1779386177/ChatGPT_Image_May_21_2026_at_11_25_48_PM_noj0jk.png" alt="S.S.M Buyers Track Logo" class="logo-icon" style="border-radius: 6px; object-fit: cover;">
+                    <span>S.S.M Buyers Track</span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-menu">
+                <button class="nav-btn active" data-target="dashboard">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="7" height="9"></rect>
+                        <rect x="14" y="3" width="7" height="5"></rect>
+                        <rect x="14" y="12" width="7" height="9"></rect>
+                        <rect x="3" y="16" width="7" height="5"></rect>
+                    </svg>
+                    <span>Dashboard</span>
+                </button>
+                
+                <button class="nav-btn" data-target="add-list">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="8" x2="12" y2="16"></line>
+                        <line x1="8" y1="12" x2="16" y2="12"></line>
+                    </svg>
+                    <span>Add List</span>
+                </button>
+                
+                <button class="nav-btn" data-target="prices">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="1" x2="12" y2="23"></line>
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>
+                    <span>Today's Prices</span>
+                </button>
+                
+                <button class="nav-btn" data-target="search">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <span>Search</span>
+                </button>
+            </nav>
+            
+        </aside>
+        
+        <!-- Main Application Area -->
+        <main class="main-content">
+            
+            <!-- Top Navigation / Search Header -->
+            <header class="top-header">
+                <div class="search-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" id="global-search" placeholder="Search customers by name...">
+                </div>
+                
+                <button id="quick-add-btn" class="quick-add-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                    <span>Quick Add</span>
+                </button>
+            </header>
+            
+            <!-- Views Container -->
+            <div class="views-wrapper">
+                
+                <!-- VIEW 1: DASHBOARD -->
+                <section id="view-dashboard" class="app-view active">
+                    <h1 class="welcome-title">Welcome to <span class="highlight">S.S.M Buyers Track</span></h1>
+                    
+                    <!-- Metrics Display Row -->
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <div class="metric-icon-wrapper blue">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v-2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                            </div>
+                            <div class="metric-info">
+                                <h3 id="stat-total-customers" class="metric-value">0</h3>
+                                <p class="metric-label">Total Customers</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metric-card">
+                            <div class="metric-icon-wrapper green">
+                                <span>₹</span>
+                            </div>
+                            <div class="metric-info">
+                                <h3 id="stat-total-sales" class="metric-value">₹0.00</h3>
+                                <p class="metric-label">Total Sales</p>
+                            </div>
+                        </div>
 
-  <!-- ========== NAVBAR ========== -->
-  <nav class="navbar scrolled" id="navbar">
-    <div class="nav-container">
-      <a href="#" class="nav-logo" id="nav-logo-link">
-        <div class="logo-icon">
-          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="18" cy="18" r="18" fill="url(#logoGrad)"/>
-            <path d="M10 22L14 14L18 20L22 12L26 22" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <defs>
-              <linearGradient id="logoGrad" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#a855f7"/>
-                <stop offset="1" stop-color="#6366f1"/>
-              </linearGradient>
-            </defs>
-          </svg>
+                        <div class="metric-card">
+                            <div class="metric-icon-wrapper orange">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                            </div>
+                            <div class="metric-info">
+                                <h3 id="stat-pending-balance" class="metric-value">₹0.00</h3>
+                                <p class="metric-label">Unpaid Balance</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Recent Purchases Section -->
+                    <div class="recent-purchases-container">
+                        <div class="section-header">
+                            <h2>Recent Purchases</h2>
+                            <button id="view-all-purchases-btn" class="link-btn">View All</button>
+                        </div>
+                        
+                        <div class="table-wrapper">
+                            <table class="purchases-table">
+                                <thead>
+                                    <tr>
+                                        <th>Customer</th>
+                                        <th>Date & Time</th>
+                                        <th>Status</th>
+                                        <th>Total</th>
+                                        <th>Items</th>
+                                        <th style="text-align: right;">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="recent-purchases-list">
+                                    <!-- Dynamic rows loaded via JS -->
+                                    <tr class="empty-state">
+                                        <td colspan="6">No recent purchases found. Click '+ Quick Add' to start.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- VIEW 2: ADD NEW BUYING LIST -->
+                <section id="view-add-list" class="app-view">
+                    <h1 class="view-title">Add New Buying List</h1>
+                    <p class="view-subtitle">Record a new purchase for an existing or new customer.</p>
+                    
+                    <div class="billing-grid">
+                        
+                        <!-- Billing Form (Left Column) -->
+                        <div class="billing-form-container">
+                            <div class="billing-card customer-details-card">
+                                <h3>Customer Details</h3>
+                                <div class="form-group autocomplete-container">
+                                    <label for="bill-customer-name">Customer Name</label>
+                                    <input type="text" id="bill-customer-name" placeholder="Enter customer name" autocomplete="off">
+                                    <div id="autocomplete-dropdown" class="autocomplete-dropdown"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="bill-customer-phone">Phone Number (Optional)</label>
+                                    <input type="tel" id="bill-customer-phone" placeholder="Enter phone number">
+                                </div>
+                            </div>
+                            
+                            <div class="billing-card items-list-card">
+                                <div class="items-header">
+                                    <h3>Items List <span class="chevron">></span></h3>
+                                </div>
+                                
+                                <div id="billing-items-container" class="billing-items-container">
+                                    <!-- Dynamic row items populate here -->
+                                </div>
+                                
+                                <button id="add-manual-item-btn" class="add-manual-item-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                    Add Item
+                                </button>
+                                
+                                <div class="billing-summary-footer">
+                                    <div class="summary-controls">
+                                        <div class="summary-control-group">
+                                            <span class="control-label">Disc:</span>
+                                            <div class="discount-input-wrapper">
+                                                <span class="currency-prefix">₹</span>
+                                                <input type="number" id="bill-discount" value="0" min="0" step="1">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="summary-control-group">
+                                            <span class="control-label">Status:</span>
+                                            <div class="status-toggle-buttons">
+                                                <button type="button" class="status-toggle-btn active paid" data-status="paid">Paid</button>
+                                                <button type="button" class="status-toggle-btn unpaid" data-status="unpaid">Unpaid</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="billing-total-row">
+                                        <div class="total-display">Total: <span id="bill-total-amount">₹0.00</span></div>
+                                        <button id="save-buying-list-btn" class="save-list-btn">Save List</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Quick Pick Panel (Right Column) -->
+                        <div class="quick-pick-container">
+                            <div class="billing-card quick-pick-card">
+                                <div class="quick-pick-header">
+                                    <h3>Quick Pick (Today's Prices)</h3>
+                                    <input type="text" id="quick-pick-search" placeholder="Search vegetables, bananas & leaves...">
+                                </div>
+                                
+                                <div class="quick-pick-tabs">
+                                    <button class="quick-tab active" data-category="all">All</button>
+                                    <button class="quick-tab" data-category="vegetables">Vegetables (காய்கறிகள்)</button>
+                                    <button class="quick-tab" data-category="bananas">Bananas (வாழைப்பழம்)</button>
+                                    <button class="quick-tab" data-category="leaves">Leaves (கீரை வகைகள்)</button>
+                                </div>
+                                
+                                <div class="quick-pick-grid-wrapper">
+                                    <div id="quick-pick-grid" class="quick-pick-grid">
+                                        <!-- Configured vegetables and bananas display here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </section>
+                
+                <!-- VIEW 3: TODAY'S PRICES -->
+                <section id="view-prices" class="app-view">
+                    <div class="prices-header-container">
+                        <div>
+                            <h1 class="view-title">Today's Vegetable, Banana & Leaf Prices</h1>
+                            <p class="view-subtitle">Configure standard rates per unit. These prices populate when items are quick-selected.</p>
+                        </div>
+                        <button id="save-all-prices-btn" class="save-prices-btn-header">Save Prices</button>
+                    </div>
+                    
+                    <div class="prices-sections-wrapper">
+                        
+                        <!-- VEGETABLES SECTION -->
+                        <div class="price-category-card">
+                            <h2 class="category-title">VEGETABLES (காய்கறிகள்)</h2>
+                            <div id="vegetables-price-grid" class="price-settings-grid">
+                                <!-- Populated dynamically by Javascript -->
+                            </div>
+                        </div>
+                        
+                        <!-- BANANAS SECTION -->
+                        <div class="price-category-card">
+                            <h2 class="category-title">BANANAS (வாழைப்பழங்கள்)</h2>
+                            <div id="bananas-price-grid" class="price-settings-grid">
+                                <!-- Populated dynamically by Javascript -->
+                            </div>
+                        </div>
+                        
+                        <!-- LEAVES SECTION -->
+                        <div class="price-category-card">
+                            <h2 class="category-title">LEAVES (கீரை வகைகள்)</h2>
+                            <div id="leaves-price-grid" class="price-settings-grid">
+                                <!-- Populated dynamically by Javascript -->
+                            </div>
+                        </div>
+                        
+                    </div>
+                </section>
+                
+                <!-- VIEW 4: CUSTOMER SEARCH -->
+                <section id="view-search" class="app-view">
+                    <h1 class="view-title">Customer Search</h1>
+                    <p id="search-results-counter" class="view-subtitle">Find buying lists and balances for customers.</p>
+                    
+                    <div class="search-page-bar-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-page-icon">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <input type="text" id="search-page-input" placeholder="Search customer name or phone number...">
+                    </div>
+                    
+                    <div class="search-layout-grid">
+                        
+                        <!-- Search Results Sidebar list -->
+                        <div class="search-results-sidebar">
+                            <div class="billing-card search-sidebar-card">
+                                <h3>Customers</h3>
+                                <div id="search-customers-list" class="search-customers-list">
+                                    <!-- Dynamic customer cards -->
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Customer Buying Details Viewer -->
+                        <div class="search-customer-details-viewer">
+                            <div id="customer-profile-empty-state" class="billing-card empty-profile-card">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="empty-icon">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                                <h3>Select a customer to view buying history</h3>
+                                <p>Search by name or number and click on the customer's card to load their transaction registers, receipts, and unpaid details.</p>
+                            </div>
+                            
+                            <!-- Customer Profile Content -->
+                            <div id="customer-profile-content" class="customer-profile-content hidden">
+                                
+                                <!-- Profile Top Summary -->
+                                <div class="billing-card customer-profile-header-card">
+                                    <div class="profile-meta">
+                                        <div class="profile-avatar" id="customer-profile-avatar">S</div>
+                                        <div>
+                                            <h2 id="customer-profile-name">Sathya</h2>
+                                            <p id="customer-profile-phone">9876543210</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="profile-stats-grid">
+                                        <div class="p-stat">
+                                            <span class="p-stat-label">Total Purchases</span>
+                                            <span class="p-stat-value" id="customer-stat-purchases">0</span>
+                                        </div>
+                                        <div class="p-stat">
+                                            <span class="p-stat-label">Total Bought</span>
+                                            <span class="p-stat-value" id="customer-stat-spent">₹0.00</span>
+                                        </div>
+                                        <div class="p-stat alert">
+                                            <span class="p-stat-label">Outstanding Unpaid</span>
+                                            <span class="p-stat-value" id="customer-stat-outstanding">₹0.00</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <button id="settle-all-balances-btn" class="settle-all-btn">Settle All Balances</button>
+                                    <button id="delete-customer-btn" class="delete-customer-btn">Delete Customer permanently</button>
+                                </div>
+                                
+                                <!-- History Accordion Section -->
+                                <h3 class="history-section-title">Purchase Registry</h3>
+                                <div id="customer-history-list" class="customer-history-list">
+                                    <!-- Dynamic expandable purchases list -->
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                </section>
+                
+            </div>
+        </main>
+        
+    </div>
+    
+    <!-- INVOICE/RECEIPT MODAL VIEW -->
+    <div id="invoice-modal" class="modal-overlay hidden">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>Buying List Invoice</h3>
+                <button id="close-invoice-modal-btn" class="close-modal-btn">&times;</button>
+            </div>
+            
+            <div class="modal-body-scroll">
+                <!-- PRINT CONTENT START -->
+                <div id="invoice-print-area" class="invoice-container">
+                    <div class="invoice-shop-header">
+                        <h2 class="shop-name">Thirumalaimurugan Shop</h2>
+                        <p class="shop-contact">Ph: 9677902673 | Main Road, Panboli - 627807</p>
+                    </div>
+                    
+                    <div class="invoice-meta-info">
+                        <div class="meta-column">
+                            <p><strong>Customer Name:</strong> <span id="inv-customer-name">Sathya</span></p>
+                            <p><strong>Phone Number:</strong> <span id="inv-customer-phone">9876543210</span></p>
+                        </div>
+                        <div class="meta-column right">
+                            <p><strong>Invoice No:</strong> <span id="inv-id">#12345</span></p>
+                            <p><strong>Date & Time:</strong> <span id="inv-datetime">17 May 2026 at 09:05 PM</span></p>
+                        </div>
+                    </div>
+                    
+                    <table class="invoice-items-table">
+                        <thead>
+                            <tr>
+                                <th>Item Particulars</th>
+                                <th style="text-align: right;">Price</th>
+                                <th style="text-align: right;">Weight/Qty</th>
+                                <th style="text-align: right;">Total (₹)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="invoice-items-body">
+                            <!-- Dynamic rows -->
+                        </tbody>
+                    </table>
+                    
+                    <div class="invoice-calculations">
+                        <div class="calc-row">
+                            <span>Subtotal:</span>
+                            <span id="inv-subtotal">₹270.00</span>
+                        </div>
+                        <div class="calc-row">
+                            <span>Discount:</span>
+                            <span id="inv-discount">₹0.00</span>
+                        </div>
+                        <div class="calc-row grand-total">
+                            <span>Grand Total:</span>
+                            <span id="inv-grand-total">₹270.00</span>
+                        </div>
+                        <div class="calc-row payment-status-row">
+                            <span>Payment Status:</span>
+                            <span id="inv-status" class="inv-status-badge paid">PAID</span>
+                        </div>
+                    </div>
+                    
+                    <div class="invoice-footer-message">
+                        <p>Thank you for buying from us! Visit again!</p>
+                    </div>
+                </div>
+                <!-- PRINT CONTENT END -->
+            </div>
+            
+            <div class="modal-footer">
+
+                <button id="print-invoice-btn" class="print-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="footer-svg">
+                        <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                        <rect x="6" y="14" width="12" height="8"></rect>
+                    </svg>
+                    <span>Print Invoice</span>
+                </button>
+            </div>
         </div>
-        <span class="logo-text">Sakthi <span class="logo-accent">Affiliates</span></span>
-      </a>
-
-      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#home" class="nav-link" id="nav-home">Home</a></li>
-        <li><a href="#products" class="nav-link" id="nav-products">Products</a></li>
-      </ul>
     </div>
-  </nav>
-
-  <!-- ========== HERO / WELCOME SECTION ========== -->
-  <section class="hero-section" id="home">
-    <div class="hero-container">
-      <h1 class="hero-title">Welcome to <span class="brand-name">Sakthi Affiliates</span></h1>
-      <p class="hero-subtitle">Your premier destination for handpicked deals and high-quality products. Click any item to shop directly from verified partner stores.</p>
-      <div class="hero-buttons">
-        <a href="#products" class="btn btn-primary">Explore Products</a>
-      </div>
-      
-      <!-- Associate Partners -->
-      <div class="partners-section">
-        <span class="partners-title">Associate Partner with</span>
-        <div class="partners-grid">
-          <div class="partner-card">
-            <img src="https://res.cloudinary.com/dbqd8ehhf/image/upload/q_auto/f_auto/v1781270132/amazon_PNG12_ml9ju7.png" alt="Amazon" class="partner-logo amazon-logo">
-          </div>
-          <div class="partner-card">
-            <img src="https://res.cloudinary.com/dbqd8ehhf/image/upload/q_auto/f_auto/v1781270132/Flipkart_logo__2026_kbgjv2.svg" alt="Flipkart" class="partner-logo flipkart-logo">
-          </div>
-          <div class="partner-card">
-            <img src="https://res.cloudinary.com/dbqd8ehhf/image/upload/q_auto/f_auto/v1781270130/10673438_h00fmr.webp" alt="Meesho" class="partner-logo meesho-logo">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== PRODUCTS ========== -->
-  <section class="products-section" id="products">
-    <div class="section-container">
-      <!-- Product Grid — populated by script.js -->
-      <div class="products-grid" id="products-grid"></div>
-    </div>
-  </section>
-
-  <!-- ========== FOOTER ========== -->
-  <footer class="footer">
-    <div class="footer-bottom">
-      <p>© 2025 Sakthi Affiliates. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <!-- ========== BACK TO TOP ========== -->
-  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
-  </button>
-
-  <script src="script.js"></script>
+    
+    <!-- Firebase Compat SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    
+    <!-- JS Scripts -->
+    <script src="app.js"></script>
 </body>
 </html>
