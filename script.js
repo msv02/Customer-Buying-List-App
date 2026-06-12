@@ -61,6 +61,13 @@ const products = [
     description: "Premium monthly color contact lenses that provide exceptional comfort and a natural, vibrant eye enhancement.",
     image: "https://res.cloudinary.com/dbqd8ehhf/image/upload/q_auto/f_auto/v1781273477/ChatGPT_Image_Jun_12_2026_at_07_40_08_PM_pxsxei.png",
     link: "https://www.amazon.in/Diamond-Monthly-Color-Contact-Lenses/dp/B0837QW56H?crid=2HJUEXIEBYTK7&dib=eyJ2IjoiMSJ9.5cMK0qQHSAUCCdHkJZ-93yqVd9_kmz97nOqMsxd9h4TGS_cvsY3b6ZPW6oQSyn__DOZ8UqaNJnccAhUzMO_hCUQbknyAqkD6C1bXcvixjRVdQlAfFf12YWTqgxFuhjO5yZWU1SKAHe_d4YjnZ7CqNzkVQS_JePyVZmS4RQQBLtbjAl61IH2dzX5mdBvEQ8FgRVqR4tH9BH-wW-ZH8OXR0NbHHmm4vaIsRweUk24RIU-g1V5mZKcaQDmBITerQi2ZcsOB9V_-qeUxeVWJTDZKL7f1WkwtSETUAGr6tM2iAB4.RDKDVfi-477drJyHbMhcqJIGOFYJ8F3rIBLAgj76Qc4&dib_tag=se&keywords=blue+monthly+contact+lens+zero+power&qid=1781272580&sprefix=blue+monthly+contact+lens+zero+power%2Caps%2C621&sr=8-9&linkCode=ll2&tag=msv026-21&linkId=534d9dc2b32a0db2ad4cc092e4b9adc5&ref_=as_li_ss_tl"
+  },
+  {
+    id: "spartan-shield-dio-speedometer",
+    name: "Spartan Shield DIO 110/125 Screen Protector",
+    description: "Premium anti-scratch, bubble-free screen guard film designed to protect the digital instrument console of your Honda Dio scooter.",
+    image: "https://res.cloudinary.com/dbqd8ehhf/image/upload/q_auto/f_auto/v1781284662/ChatGPT_Image_Jun_12_2026_at_10_47_18_PM_iuvpkj.png",
+    link: "https://www.amazon.in/Spartan-Shield-DIO-110-Speedometer/dp/B0FPXP9HJY?crid=3IZIBMVVWMG0X&dib=eyJ2IjoiMSJ9.b_3pzk_VONC0WfADNwh8KXZKtUwuyOjBYy_WVU28kS0GkQ2Q_9kaKYIP875RfwZl8YaE0i7t0Do10_Ugzc_LAFe6z10KKnxwpBbY_rG-TzhxehMsAh3E7m8JuJ93cQ5K.B1-mCUIZNeeg6gZ87FOnSPPBMIpjKzlWcIFxdoJgDGA&dib_tag=se&keywords=dio%2B125%2Bh-smart%2Bdisplay%2Btemper&qid=1781283090&refinements=p_72%3A1318476031%2Cp_n_feature_fourteen_browse-bin%3A11142592031&rnid=11142591031&sprefix=dio%2B125%2Bh-smart%2Bdisplay%2Btemper%2Caps%2C445&sr=8-1&th=1&linkCode=ll2&tag=msv026-21&linkId=2c52f95d8b8adcd63e89fd7bb9f47c20&ref_=as_li_ss_tl"
   }
 ];
 // ============ END OF PRODUCTS ============

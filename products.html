@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sakthi Affiliates</title>
-  <meta name="description" content="Sakthi Affiliates – Premium curated affiliate deals." />
+  <title>Products – Sakthi Affiliates</title>
+  <meta name="description" content="Browse our handpicked premium deals and curated products." />
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="https://res.cloudinary.com/dbqd8ehhf/image/upload/q_auto/f_auto/v1781189222/ChatGPT_Image_Jun_11_2026_at_08_16_00_PM_k2scar.png" />
   <link rel="apple-touch-icon" href="https://res.cloudinary.com/dbqd8ehhf/image/upload/q_auto/f_auto/v1781189222/ChatGPT_Image_Jun_11_2026_at_08_16_00_PM_k2scar.png" />
@@ -18,7 +18,7 @@
   <!-- ========== NAVBAR ========== -->
   <nav class="navbar scrolled" id="navbar">
     <div class="nav-container">
-      <a href="#" class="nav-logo" id="nav-logo-link">
+      <a href="index.html" class="nav-logo" id="nav-logo-link">
         <div class="logo-icon">
           <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="18" cy="18" r="18" fill="url(#logoGrad)"/>
@@ -39,40 +39,25 @@
       </button>
 
       <ul class="nav-links" id="nav-links">
-        <li><a href="index.html" class="nav-link active" id="nav-home">Home</a></li>
-        <li><a href="products.html" class="nav-link" id="nav-products">Products</a></li>
+        <li><a href="index.html" class="nav-link" id="nav-home">Home</a></li>
+        <li><a href="products.html" class="nav-link active" id="nav-products">Products</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- ========== HERO / WELCOME SECTION ========== -->
-  <section class="hero-section" id="home">
-    <div class="hero-container">
-      <h1 class="hero-title">Welcome to <span class="brand-name">Sakthi Affiliates</span></h1>
-      <p class="hero-subtitle">Your premier destination for handpicked deals and high-quality products. Click any item to shop directly from verified partner stores.</p>
-      <div class="hero-buttons">
-        <a href="products.html" class="btn btn-primary">Explore Products</a>
+  <!-- ========== PRODUCTS SECTION ========== -->
+  <section class="products-section page-products" id="products">
+    <div class="section-container">
+      <!-- Section Header -->
+      <div class="products-page-header">
+        <h1 class="products-page-title"><span class="brand-name">Products</span></h1>
+        <p class="products-page-subtitle">Handpicked premium deals and high-quality products. Click any item to shop directly from verified partner stores.</p>
       </div>
-      
-      <!-- Associate Partners -->
-      <div class="partners-section">
-        <span class="partners-title">Associate Partner with</span>
-        <div class="partners-grid">
-          <div class="partner-card">
-            <img src="https://res.cloudinary.com/dbqd8ehhf/image/upload/q_auto/f_auto/v1781270132/amazon_PNG12_ml9ju7.png" alt="Amazon" class="partner-logo amazon-logo">
-          </div>
-          <div class="partner-card">
-            <img src="https://res.cloudinary.com/dbqd8ehhf/image/upload/q_auto/f_auto/v1781270132/Flipkart_logo__2026_kbgjv2.svg" alt="Flipkart" class="partner-logo flipkart-logo">
-          </div>
-          <div class="partner-card">
-            <img src="https://res.cloudinary.com/dbqd8ehhf/image/upload/q_auto/f_auto/v1781270130/10673438_h00fmr.webp" alt="Meesho" class="partner-logo meesho-logo">
-          </div>
-        </div>
-      </div>
+
+      <!-- Product Grid — populated by script.js -->
+      <div class="products-grid" id="products-grid"></div>
     </div>
   </section>
-
-
 
   <!-- ========== FOOTER ========== -->
   <footer class="footer">
