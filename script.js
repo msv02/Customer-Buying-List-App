@@ -68,6 +68,41 @@ const products = [
     description: "Premium anti-scratch, bubble-free screen guard film designed to protect the digital instrument console of your Honda Dio scooter.",
     image: "https://res.cloudinary.com/dbqd8ehhf/image/upload/q_auto/f_auto/v1781284662/ChatGPT_Image_Jun_12_2026_at_10_47_18_PM_iuvpkj.png",
     link: "https://www.amazon.in/Spartan-Shield-DIO-110-Speedometer/dp/B0FPXP9HJY?crid=3IZIBMVVWMG0X&dib=eyJ2IjoiMSJ9.b_3pzk_VONC0WfADNwh8KXZKtUwuyOjBYy_WVU28kS0GkQ2Q_9kaKYIP875RfwZl8YaE0i7t0Do10_Ugzc_LAFe6z10KKnxwpBbY_rG-TzhxehMsAh3E7m8JuJ93cQ5K.B1-mCUIZNeeg6gZ87FOnSPPBMIpjKzlWcIFxdoJgDGA&dib_tag=se&keywords=dio%2B125%2Bh-smart%2Bdisplay%2Btemper&qid=1781283090&refinements=p_72%3A1318476031%2Cp_n_feature_fourteen_browse-bin%3A11142592031&rnid=11142591031&sprefix=dio%2B125%2Bh-smart%2Bdisplay%2Btemper%2Caps%2C445&sr=8-1&th=1&linkCode=ll2&tag=msv026-21&linkId=2c52f95d8b8adcd63e89fd7bb9f47c20&ref_=as_li_ss_tl"
+  },
+  {
+    id: "reen-charcoal-multani-mitti",
+    name: "Reen Naturals Charcoal & Multani Mitti Powder Combo",
+    description: "A deep pore cleansing face pack combo featuring Activated Bamboo Charcoal and Multani Mitti powders to detoxify, exfoliate, and brighten skin naturally.",
+    image: "https://res.cloudinary.com/dbqd8ehhf/image/upload/q_auto/f_auto/v1781449080/ChatGPT_Image_Jun_14_2026_at_08_27_28_PM_jqmgee.png",
+    link: "https://www.amazon.in/gp/product/B0CXXNFHLC?smid=A8HJQWCREB2SL&psc=1&linkCode=ll2&tag=msv026-21&linkId=8522e85ad6faef842c5d8801b6a3252a&ref_=as_li_ss_tl"
+  },
+  {
+    id: "reen-naturals-hair-dye-combo",
+    name: "Reen Naturals Henna & Indigo Powder Combo",
+    description: "100% natural and organic Henna and Indigo powders for safe, chemical-free hair coloring and deep conditioning.",
+    image: "https://res.cloudinary.com/dbqd8ehhf/image/upload/q_auto/f_auto/v1781449079/ChatGPT_Image_Jun_14_2026_at_08_25_45_PM_fany1q.png",
+    link: "https://www.amazon.in/gp/product/B0GYD1QL7G?smid=AXOGFIT0PZZ7G&th=1&linkCode=ll2&tag=msv026-21&linkId=c14829f4e264041cf08c5dbbb268ab40&ref_=as_li_ss_tl"
+  },
+  {
+    id: "portronics-mport-30-card-reader",
+    name: "Portronics Mport 30 Plus Card Reader",
+    description: "A multifunctional, high-speed plug-and-play card reader with built-in storage slots for SD/microSD cards, SIM cards, and a SIM ejector pin.",
+    image: "https://res.cloudinary.com/dbqd8ehhf/image/upload/q_auto/f_auto/v1781449602/61SsgxQEULL._AC_UF1000_1000_QL80__gj4y5v.jpg",
+    link: "https://www.amazon.in/gp/product/B0DK1KSNF4?smid=AJ6SIZC8YQDZX&psc=1&linkCode=ll2&tag=msv026-21&linkId=0f00e1d37902e9cb1b15a8a478f738dd&ref_=as_li_ss_tl"
+  },
+  {
+    id: "portronics-tornado-air-duster",
+    name: "Portronics Tornado Handheld Air Duster",
+    description: "A powerful, rechargeable, 130,000 RPM high-speed cordless air duster with three speed modes to easily clean keyboards, laptops, CPUs, and car interiors.",
+    image: "https://res.cloudinary.com/dbqd8ehhf/image/upload/q_auto/f_auto/v1781449601/61_N9FyfSzL._AC_UF1000_1000_QL80__ux5yfv.jpg",
+    link: "https://www.amazon.in/gp/product/B0F9LKX5XG?smid=A2AL6IVND0I91F&th=1&linkCode=ll2&tag=msv026-21&linkId=3deefa9cd0ae4df982cd5c9fbcdb7b94&ref_=as_li_ss_tl"
+  },
+  {
+    id: "amazon-echo-dot-5th-gen",
+    name: "Amazon Echo Dot (5th Gen) Smart Speaker",
+    description: "Smart speaker with Alexa, offering deeper bass, vibrant sound, built-in temperature sensor, and motion detection.",
+    image: "https://res.cloudinary.com/dbqd8ehhf/image/upload/q_auto/f_auto/v1781449603/Amazon-Echo-Dot-5th-Gen-Smart-speaker-with-vibrant-sound-Motion-Detection-Temper-0-1200x1200_tikntz.jpg",
+    link: "https://www.amazon.in/gp/product/B09B8XJDW5?smid=AJ6SIZC8YQDZX&th=1&linkCode=ll2&tag=msv026-21&linkId=3fabce184d9de5f23e076495960e0da6&ref_=as_li_ss_tl"
   }
 ];
 // ============ END OF PRODUCTS ============
